@@ -89,14 +89,9 @@ namespace Task1
         #endregion
 
         #region Operators
-        public static Polinome operator +(Polinome polinome)
-        {
-            if (ReferenceEquals(polinome, null))
-                throw new ArgumentNullException();
+        public static Polinome operator +(Polinome polinome) => polinome;
 
-            return polinome;
-        }
-
+        /// <exception cref="ArgumentNullException"></exception>
         public static Polinome operator -(Polinome polinome)
         {
             if (ReferenceEquals(polinome, null))
@@ -144,14 +139,7 @@ namespace Task1
         /// <param name="rhs">second polynomial</param>
         /// <returns>calculated polynomial</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Polinome operator -(Polinome lhs, Polinome rhs)
-        {
-            if (ReferenceEquals(null, lhs) || ReferenceEquals(null, rhs))
-                throw new ArgumentNullException();
-
-            return lhs + -rhs;
-
-        }
+        public static Polinome operator -(Polinome lhs, Polinome rhs) => lhs + -rhs;
 
         /// <summary>
         /// Calculate multiple of two polynomials
@@ -178,21 +166,11 @@ namespace Task1
             return new Polinome(reuslPolinome);
         }
 
-        public static Polinome Add(Polinome lhs, Polinome rhs)
-        {
-            return lhs + rhs;
-        }
+        public static Polinome Add(Polinome lhs, Polinome rhs) => lhs + rhs;
 
-        public static Polinome Subtract(Polinome lhs, Polinome rhs)
-        {
-            return lhs - rhs;
-        }
+        public static Polinome Subtract(Polinome lhs, Polinome rhs) => lhs - rhs;       
 
-        public static Polinome Multiple(Polinome lhs, Polinome rhs)
-        {
-            return lhs * rhs;
-        }
-
+        public static Polinome Multiple(Polinome lhs, Polinome rhs) => lhs * rhs;
 
         /// <summary>
         /// Check on equals polynomials
